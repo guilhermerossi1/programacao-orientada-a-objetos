@@ -1,0 +1,34 @@
+## AULA 22/09 - PROFESSOR UZEDA
+
+## DESAFIO SEI LA DO QUE - "SILO"
+## Cenário: cooperativa que monitora silos de graos - capacidade e niveis
+
+## usar listas para armazenar varias informacoes
+## usar dicionario para armazenar informacoes diferentes
+
+# PASSO 1 -setar as informaçoes
+
+listaqualquer = [{"SILO": 'silo01', "capacidade": 10, "nivel": 8},
+                 {"SILO": 'silo02', "capacidade": 100, "nivel": 80},
+                 {"SILO": 'silo03', "capacidade": 1000, "nivel": 800},
+                 {"SILO": 'silo04', "capacidade": 10000, "nivel": 9001}]
+
+# PASSO 2 do desafio - calcular o percentual de cada silo
+
+def calculopercentual (capacidade, nivel):
+    percentual = (nivel / capacidade) * 100
+    return percentual
+
+# PASSO 3 - passar/avaliar todos itens da lista ---------------- usando o "FOR EACH"
+# identificar quais silos operam em niivel critico (>= 90 de ocupação)
+
+status = ""
+
+
+for itemsilo in listaqualquer:
+    if calculopercentual(itemsilo['capacidade'], itemsilo['nivel']) >= 90:
+        status = "critico"
+    else:
+        status = 'normal' 
+    print(f'No silo {itemsilo["SILO"]} o status é {status}') 
+    
